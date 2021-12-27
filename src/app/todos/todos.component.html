@@ -1,0 +1,25 @@
+<div class="wrapper">
+    <header class="app-header">Todo App</header>
+    <br>
+    <hr>
+    <div class="input-field">
+        <form class="input-form"(submit)="addTodo()">
+            <input class="text-box" type="text" name="inputTodo" placeholder="Enter Todo..." class="todo-input" [(ngModel)]="inputTodo">
+            <button type="submit"><i class="fas fa-plus"></i></button>
+        </form>
+    </div>
+    <hr>
+    <br>
+    <div class="todos">
+        <ul *ngFor="let todo of todos; let i = index" class="todo-list {{todo.finished? 'done':''}}">
+            <li>
+                <span (click)="toggleDone(i)">{{todo.content}}</span> 
+                <span (click)="deleteTodo(i)" class="todo-item"><i class="fas fa-trash"></i></span>
+            </li>
+        </ul>
+    </div>
+    
+</div>
+ 
+
+
